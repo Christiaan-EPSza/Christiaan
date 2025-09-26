@@ -1,0 +1,14 @@
+{
+    "name": "Christiaan",
+    "version": "1.0",
+    "authors": [
+        "Christiaan Erskine"
+    ],
+    "description": "My first bot",
+    "homepage": "https://github.com/Christiaan-EPSza/christiaan",
+    "countryCodes": [
+        "ZA"
+    ],
+    "platform": "Java",
+    "programmingLang": "Java"
+}
