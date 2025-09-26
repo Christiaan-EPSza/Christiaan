@@ -2,7 +2,6 @@ import dev.robocode.tankroyale.botapi.*;
 import dev.robocode.tankroyale.botapi.events.*;
 import dev.robocode.tankroyale.botapi.graphics.Color;
 
-
 public class Christiaan extends Bot {
 
     boolean peek; // Don't turn if there's a bot there
@@ -17,11 +16,11 @@ public class Christiaan extends Bot {
     @Override
     public void run() {
         // Set colors
-        setBodyColor(new Color(0xFF8700));      // McLaren F1 papaya orange (#FF8700)
-        setTurretColor(new Color(0x1C1C1C));    // Black accents (#1C1C1C)
-        setRadarColor(new Color(0xFFFFFF));     // White for visibility (#FFFFFF)
-        setBulletColor(new Color(0xFF8700));    // Papaya orange bullets (#FF8700)
-        setScanColor(new Color(0x1C1C1C));      // Black scan lines (#1C1C1C)
+        setBodyColor(Color.fromRgb(255, 135, 0)); // McLaren F1 papaya orange (#FF8700)
+        setTurretColor(Color.fromRgb(28, 28, 28)); // Black accents (#1C1C1C)
+        setRadarColor(Color.fromRgb(255, 255, 255)); // White for visibility (#FFFFFF)
+        setBulletColor(Color.fromRgb(255, 135, 0)); // Papaya orange bullets (#FF8700)
+        setScanColor(Color.fromRgb(28, 28, 28)); // Black scan lines (#1C1C1C)
 
         // Initialize moveAmount to the maximum possible for the arena
         moveAmount = Math.max(getArenaWidth(), getArenaHeight());
@@ -68,7 +67,8 @@ public class Christiaan extends Bot {
     public void onScannedBot(ScannedBotEvent e) {
         fire(2);
         // Note that scan is called automatically when the bot is turning.
-        // By calling it manually here, we make sure we generate another scan event if there's a bot
+        // By calling it manually here, we make sure we generate another scan event if
+        // there's a bot
         // on the next wall, so that we do not start moving up it until it's gone.
         if (peek) {
             rescan();
